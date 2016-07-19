@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-21 22:32:06 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.schoolbus.entity.User" table="user" catalog="schoolbus" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="account" type="string">
+            <column name="account" length="20" not-null="true" />
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="40" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="40" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="40" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="40" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="userType" type="java.lang.Integer">
+            <column name="user_type" />
+        </property>
+        <property name="busId" type="java.lang.Integer">
+            <column name="bus_id" />
+        </property>
+        <property name="busName" type="string">
+            <column name="bus_name" length="20" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state" />
+        </property>
+        <property name="appointmentLine" type="java.lang.Integer">
+            <column name="appointment_line" />
+        </property>
+        <property name="appointmentOrientation" type="java.lang.Integer">
+            <column name="appointment_orientation" />
+        </property>
+        <property name="appointmentStationId" type="java.lang.Integer">
+            <column name="appointment_station_id" />
+        </property>
+    </class>
+</hibernate-mapping>

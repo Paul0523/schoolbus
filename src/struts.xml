@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	
+	<package name="useraction" extends="json-default" namespace="/">
+		<result-types>  
+            <result-type name="string" class="com.schoolbus.controller.StringResult"></result-type>  
+        </result-types>  
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.schoolbus.controller.LoginInterceptor"></interceptor>
+			<!-- <interceptor-stack name="myStack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack> -->
+		</interceptors>
+		<!-- <default-interceptor-ref name="defaultStack"></default-interceptor-ref> -->
+		<action name="customer_*" method="{1}" class="com.schoolbus.controller.CustomerAction">
+			<result name="strResponse" type="string">  
+                <param name="stringName">resultStr</param>  
+            </result> 			
+		</action>
+		<action name="user_*" method="{1}" class="com.schoolbus.controller.UserAction">
+			<result name="strResponse" type="string">  
+                <param name="stringName">resultStr</param>  
+            </result> 	
+		</action>
+		<action name="manager_*" method="{1}" class="com.schoolbus.controller.ManagerAction">
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			<result name="strResponse" type="string">  
+                <param name="stringName">resultStr</param>  
+            </result> 	
+            <result name="index">/pages/logined/index.jsp</result>		
+            <result name="login_page">/index.jsp</result>		
+		</action>
+		<action name="bus_*" method="{1}" class="com.schoolbus.controller.BusAction">
+			<result name="strResponse" type="string">  
+                <param name="stringName">resultStr</param>  
+            </result> 	
+		</action>
+		<action name="line_*" method="{1}" class="com.schoolbus.controller.LineAction">
+			<result name="strResponse" type="string">  
+                <param name="stringName">resultStr</param>  
+            </result> 	
+		</action>
+		<action name="linestations_*" method="{1}" class="com.schoolbus.controller.LineStationsAction">
+			<result name="strResponse" type="string">  
+                <param name="stringName">resultStr</param>  
+            </result> 	
+		</action>
+		<action name="driver_*" method="{1}" class="com.schoolbus.controller.DriverAction">
+			<result name="strResponse" type="string">  
+                <param name="stringName">resultStr</param>  
+            </result> 	
+		</action>
+		<action name="station_*" method="{1}" class="com.schoolbus.controller.StationAction">
+			<result name="strResponse" type="string">  
+                <param name="stringName">resultStr</param>  
+            </result> 	
+		</action>
+		<action name="lineinfo_*" method="{1}" class="com.schoolbus.controller.LineInfoAction">
+			<result name="strResponse" type="string">  
+                <param name="stringName">resultStr</param>  
+            </result> 	
+		</action>
+	</package>
+	
+</struts>

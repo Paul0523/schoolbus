@@ -1,0 +1,69 @@
+*{margin:0;padding:0;}
+html{
+	widh:100%;
+	height:100%;
+	background:red;
+}
+body{
+	height:100%;
+}
+.NavWrap{
+	height:45px;
+	position:relative;	
+	background:#00a0ea;
+}
+a:link,a:visited,a:hover{
+	 text-decoration:none;
+	 color:#fff;
+	 cursor:pointer;
+}
+.Nav{
+	list-style-type:none;
+	background:#00a0ea;
+	overflow:hidden;
+	position:absolute;
+	left:350px;
+}
+
+.Nav li{
+	padding-left:5px;
+	line-height:45px;
+	text-align:center;
+	width:130px;
+	float:left;
+	color:#fff;
+}
+
+.Nav li:hover{
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.current{
+	background:#2dbcff;
+	font-weight:bold;
+}
+.wel{
+	overflow:hidden;
+	height:38px;
+	width:150px;
+	position:absolute;
+	right:40px;
+	font-size:12px;
+	padding-top:7px;
+}
+.wel li{
+	list-style-type:none;
+	text-align:left;
+}
+
+.welbtn li{
+	float:left;
+	margin-right:10px;
+}
+.mainbody{
+	height:100%;
+	width:100%;
+	background:blue;
+	overflow:hidden;
+}
